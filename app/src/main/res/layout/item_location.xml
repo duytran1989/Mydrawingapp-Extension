@@ -65,6 +65,18 @@
                 android:textColor="@color/colorPrimary"
                 android:textStyle="italic" />
 
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipVisited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:textSize="12sp"
+                app:chipIconVisible="false"
+                app:closeIconVisible="false"
+                app:checkedIconVisible="false" />
+
         </LinearLayout>
     </LinearLayout>
 

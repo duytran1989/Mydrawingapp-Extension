@@ -13,4 +13,10 @@
     <string name="error_date_invalid">Enter a valid date (e.g. January 2024)</string>
     <string name="error_description_length">Description must be at least 5 characters</string>
     <string name="toast_updated">%s updated</string>
+    <string name="toast_added">%s added</string>
+    <string name="title_add_location">Add Location</string>
+    <string name="hint_search">Search locations…</string>
+    <string name="empty_no_locations">No locations yet.\nTap + to add one.</string>
+    <string name="empty_no_results">No locations match\nyour search.</string>
+    <string name="label_visited">Visited</string>
 </resources>
