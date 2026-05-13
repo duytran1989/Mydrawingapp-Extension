@@ -2,12 +2,15 @@ package com.marknguyen.mydrawingapp_extension
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -88,6 +91,7 @@ class DetailActivity : AppCompatActivity() {
             switchVisited.text = getString(
                 if (checked) R.string.label_visited_yes else R.string.label_visited_no
             )
+            if (checked) showTopSnackbar("You have been here!")
         }
     }
 
@@ -125,6 +129,15 @@ class DetailActivity : AppCompatActivity() {
             calendar.get(Calendar.MONTH),
             calendar.get(Calendar.DAY_OF_MONTH)
         ).show()
+    }
+
+    private fun showTopSnackbar(message: String) {
+        val root = findViewById<CoordinatorLayout>(R.id.coordinatorDetail)
+        val snackbar = Snackbar.make(root, message, Snackbar.LENGTH_SHORT)
+        val params = snackbar.view.layoutParams as CoordinatorLayout.LayoutParams
+        params.gravity = Gravity.TOP
+        snackbar.view.layoutParams = params
+        snackbar.show()
     }
 
     private fun parseDate(text: String): Calendar? = try {

@@ -53,6 +53,7 @@
             android:layout_height="match_parent"
             android:background="@color/background"
             android:clipToPadding="false"
+            android:paddingHorizontal="6dp"
             android:paddingTop="8dp"
             android:paddingBottom="88dp" />
 
