@@ -49,6 +49,10 @@ object LocationRepository {
         }
     }
 
+    fun add(location: Location) {
+        _locations.add(location)
+    }
+
     fun remove(index: Int): Location? =
         if (index in _locations.indices) _locations.removeAt(index) else null
 

@@ -50,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbarDetail)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = location.name
+        supportActionBar?.title = if (position < 0) getString(R.string.title_add_location) else location.name
 
         initViews()
         populateForm()
@@ -181,10 +181,18 @@ class DetailActivity : AppCompatActivity() {
             isVisited = switchVisited.isChecked
         )
 
-        if (updated != location && position >= 0) {
-            LocationRepository.update(position, updated)
-            location = updated
-            Toast.makeText(this, getString(R.string.toast_updated, location.name), Toast.LENGTH_SHORT).show()
+        when {
+            position < 0 -> {
+                LocationRepository.add(updated)
+                location = updated
+                position = LocationRepository.locations.size - 1
+                Toast.makeText(this, getString(R.string.toast_added, updated.name), Toast.LENGTH_SHORT).show()
+            }
+            updated != location -> {
+                LocationRepository.update(position, updated)
+                location = updated
+                Toast.makeText(this, getString(R.string.toast_updated, updated.name), Toast.LENGTH_SHORT).show()
+            }
         }
 
         return true
