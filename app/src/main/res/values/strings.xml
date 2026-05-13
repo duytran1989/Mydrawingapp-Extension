@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My Locations</string>
+    <string name="label_last_visit">Last Visit: %s</string>
+    <string name="label_visited_yes">Visited</string>
+    <string name="label_visited_no">Not Visited</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_city">City</string>
+    <string name="hint_last_visit">Last Visit (e.g. January 2024)</string>
+    <string name="hint_description">Description</string>
+    <string name="label_rating">Rating</string>
+    <string name="error_name_length">Name must be at least 2 characters</string>
+    <string name="error_city_required">City is required</string>
+    <string name="error_date_invalid">Enter a valid date (e.g. January 2024)</string>
+    <string name="error_description_length">Description must be at least 5 characters</string>
+    <string name="toast_updated">%s updated</string>
+</resources>
